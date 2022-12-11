@@ -1,0 +1,60 @@
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Point;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.util.ArrayList;
+
+import javax.swing.JPanel;
+
+public class MyPanel extends JPanel {
+	public ArrayList figures = new ArrayList();
+	public MyButton btnRect = new MyButton("사각형");
+	public MyButton btnOval = new MyButton("타원");
+	public MyButton btnLine = new MyButton("선분");
+	protected int x1, y1, x2, y2;
+	protected Point p;
+	public MyPanel() {
+		setBackground(new Color(200, 255, 255));
+		addMouseListener(new MyListener());
+		btnRect.setBounds(10, 60, 70, 25);
+		btnOval.setBounds(90, 60, 70, 25);
+		btnLine.setBounds(170, 60, 70, 25);
+		
+		this.add(btnRect);
+		this.add(btnOval);
+		this.add(btnLine);
+	}
+	private void add(MyButton btn) {
+		figures.add(btn);
+	}
+	@Override public void paint(Graphics g) {
+		super.paint(g);
+		
+		
+		for(Object figure : figures) {
+			((Figure) figure).draw(g);
+		}
+	}
+	class MyListener implements MouseListener{
+
+		@Override
+		public void mouseClicked(MouseEvent e) {
+			p = e.getPoint();
+		}
+		@Override
+		public void mousePressed(MouseEvent e) {
+			x1 = e.getX();
+			y1 = e.getY();
+		}
+		@Override
+		public void mouseReleased(MouseEvent e) {
+			x2 = e.getX();
+			y2 = e.getY();
+		}
+		@Override
+		public void mouseEntered(MouseEvent e) {}
+		@Override
+		public void mouseExited(MouseEvent e) {}
+	}
+}

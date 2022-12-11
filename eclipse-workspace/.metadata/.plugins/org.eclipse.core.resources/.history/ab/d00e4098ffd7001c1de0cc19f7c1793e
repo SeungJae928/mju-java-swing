@@ -1,0 +1,83 @@
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
+
+import javax.swing.AbstractButton;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JToolBar;
+
+class MyFrame extends JFrame {
+	Color color = new Color(0,0,0);
+	ArrayList<JButton> buttons = new ArrayList<>();
+	ArrayList<Figure> figures = new ArrayList<>();
+	JToolBar tool = new JToolBar();
+	public MyFrame() {
+		tool.setBackground(Color.gray);
+		buttons.add(new JButton("사각형"));
+		buttons.add(new JButton("타원"));
+		buttons.add(new JButton("선분"));
+		buttons.add(new JButton("복합도형"));
+		buttons.add(new JButton("빨강"));
+		buttons.add(new JButton("파랑"));
+		buttons.add(new JButton("초록"));
+		
+		ActionListener lis = new ActionListener() {
+			@Override public void actionPerformed(ActionEvent e) {
+				Object p = e.getSource();
+				if(((AbstractButton) p).getText().equals("사각형")) {
+					System.out.println("11");
+				} else if(((AbstractButton) p).getText().equals("타원")) {
+					System.out.println("22");
+				} else if(((AbstractButton) p).getText().equals("선분")) {
+					System.out.println("33");
+				} else if(((AbstractButton) p).getText().equals("복합도형")) {
+					System.out.println("44");
+				} else if(((AbstractButton) p).getText().equals("빨강")) {
+					System.out.println("빨");
+					new Figure(Color.red);
+				} else if(((AbstractButton) p).getText().equals("파랑")) {
+					System.out.println("파");
+					new Figure(Color.blue);
+				} else if(((AbstractButton) p).getText().equals("초록")) {
+					System.out.println("초");
+					new Figure(Color.green);
+				}
+			}
+		};
+		
+		for(JButton button : buttons) {
+			tool.add(button);
+			button.addActionListener(lis);
+		}
+		
+		this.add(tool, BorderLayout.NORTH);
+		
+		
+	}
+	@Override public void paint(Graphics g) {
+		super.paint(g);
+		
+		for(Figure figure : figures) {
+			figure.draw(g);
+		}
+	}
+}
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+        JFrame f = new MyFrame();
+		
+		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		f.setSize(700,400);
+		
+		f.setVisible(true);
+	}
+
+}

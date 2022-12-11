@@ -1,0 +1,120 @@
+class Link {
+	public String data;  
+	public Link next;
+	public Link prev;
+	public Link(String data){
+		this.data = data;
+		this.next = null;
+		this.prev = null;
+	}
+}
+
+public class MyLinkedList {
+	Link front;
+	Link back;
+	
+	boolean isEmpty() {
+		return front == null || back ==null;
+	}
+	
+	void addFront(String s){
+		Link link = new Link(s);
+		if(isEmpty()) {
+			this.front = link;
+		} else {
+			link.next = front;
+			front.prev = link;
+			front = link;
+		}
+		if(front.next == null) {
+			back = front;
+		}
+	}
+	
+	void addBack(String s) {
+		Link link = new Link(s);
+		if(isEmpty()) {
+			addFront(s);
+		} else {
+			back.next = link;
+			link.prev = back;
+			back = link;
+		}
+	}
+	
+	String peekFront() {
+		return front.data;
+	}
+	
+	String peekBack() {
+		return back.data;
+	}
+	
+	String removeFront() throws Exception {
+		if(isEmpty()) {
+			throw (new Exception("List가 비어있음"));
+		}
+		Link link = front;
+		front = null;
+		front = link.next;
+		front.prev = null;
+		return front.data;
+	}
+	
+	void remove(String s) {
+		while (s.equals(front.data)) {
+			front = front.next;
+		}
+		Link link = front;
+		front = null;
+		front = link.next;
+	}
+	
+	String removeBack() throws Exception {
+		if(isEmpty()) {
+			throw (new Exception("List가 비어있음"));
+		}
+		Link link = back;
+		back = null;
+		back = link.prev;
+		back.next = null;
+		
+		return back.data;
+	}
+	
+	void printForward() {
+		Link[] lk = new Link[100];
+		int i = 0;
+		while(!isEmpty()) {
+			System.out.print(peekFront() + " ");
+			lk[i] = front;
+			front = front.next;
+			i++;
+		}
+		System.out.println();
+		for(;i > 0; i--) {
+			if(lk[i-1] == null) {
+				break;
+			}
+			addFront(lk[i-1].data);
+		}
+	}
+	
+	void printBackward() {
+		Link[] lk = new Link[100];
+		int i = 0;
+		while(!isEmpty()) {
+			System.out.print(peekBack() + " ");
+			lk[i] = back;
+			back = back.prev;
+			i++;
+		}
+		System.out.println();
+		for(;i > 0; i--) {
+			if(lk[i-1] == null) {
+				break;
+			}
+			addBack(lk[i-1].data);
+		}
+	}
+}

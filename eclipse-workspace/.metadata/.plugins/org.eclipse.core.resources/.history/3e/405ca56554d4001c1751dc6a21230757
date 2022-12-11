@@ -1,0 +1,19 @@
+import java.awt.Graphics;
+
+public class MyButton {
+	int type, x, y, width, height;
+	Figure f;
+    public MyButton(String s) {
+		this.f = new Rect(x, y, width, height);
+		
+	}
+	public void setBounds(int x, int y, int width, int height) {
+		this.x = x;
+		this.y = y;
+		this.width = width;
+		this.height = height;
+	}
+	public void draw(Graphics g) {
+		g.drawRect(x, y, width, height);
+	}
+}

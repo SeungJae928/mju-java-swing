@@ -1,0 +1,18 @@
+class Player{
+	public String name;
+	public double average;
+	
+}
+
+
+public class Sorter {
+	public Player[] myPlayers;
+	public Sorter() {
+		myPlayers = new Player[5];
+		myPlayers[0] = new Player("김길동", 0.3);
+	}
+	public static void main(String[] args) {
+		
+	}
+
+}

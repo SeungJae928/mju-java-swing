@@ -1,0 +1,37 @@
+import java.awt.BorderLayout;
+import java.awt.Color;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JToolBar;
+
+class MyFrame extends JFrame {
+	public MyFrame() {
+		JToolBar tool = new JToolBar();
+		tool.setBackground(Color.gray);
+		tool.add(new JButton("사각형"));
+		tool.add(new JButton("타원"));
+		tool.add(new JButton("선분"));
+		tool.add(new JButton("빨강"));
+		tool.add(new JButton("파랑"));
+		tool.add(new JButton("초록"));
+		
+		this.add(tool, BorderLayout.NORTH);
+	}
+	
+}
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+        JFrame f = new MyFrame();
+		
+		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		f.setSize(700,400);
+		
+		f.setVisible(true);
+	}
+
+}

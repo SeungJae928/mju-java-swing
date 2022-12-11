@@ -1,0 +1,25 @@
+class Link{
+	public int data;  
+	public Link next;
+	public Link(int data, Link link){
+		// 생성자를 이용하자.
+	}
+}
+
+public class Stack{
+	private Link firstLink;
+	
+	
+	void add(int i) {
+		firstLink.data = i;
+	}
+	int top() {
+		return 0;
+	}
+	boolean isEmpty() {
+		return false;
+	}
+	void pop() {
+		
+	}
+}

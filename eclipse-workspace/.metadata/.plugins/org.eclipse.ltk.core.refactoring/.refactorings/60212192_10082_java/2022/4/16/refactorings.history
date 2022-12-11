@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;MyBufferFileInputStream&apos; to &apos;MyBufferedFileInputStream&apos;&#x0D;&#x0A;- Original project: &apos;60212192_10082_java&apos;&#x0D;&#x0A;- Original element: &apos;MyBufferFileInputStream&apos;&#x0D;&#x0A;- Renamed element: &apos;MyBufferedFileInputStream&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;MyBufferFileInputStream&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;{MyBufferFileInputStream.java[MyBufferFileInputStream" matchStrategy="1" name="MyBufferedFileInputStream" qualified="false" references="true" similarDeclarations="false" stamp="1649853446723" textual="false" version="1.0"/>
+</session>

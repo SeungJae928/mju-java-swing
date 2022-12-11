@@ -1,0 +1,34 @@
+package mylib;
+
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.event.ActionEvent;
+import java.awt.event.MouseEvent;
+
+public class KButton extends KAbstractButton {
+	public KButton(String name) {
+		super(name);
+	}
+//	public void setColor(Color c) {
+//		
+//	}
+	@Override public void Click() {
+		lis.actionPerformed(new ActionEvent(this.text, MouseEvent.MOUSE_CLICKED, ""));
+	}
+	@Override public void draw(Graphics g) {
+		g.drawRect(x, y, width, height);
+		g.drawString(text, x + (width - text.length()) / 5, y + 25);
+	}
+	@Override public void addKActionListener(KActionListener lis) {
+		this.lis = lis;
+	}
+	@Override public void setBounds(int x, int y, int width, int height) {
+		this.x = x;
+		this.y = y;
+		this.width = width;
+		this.height = height;
+	}
+	public String getText() {
+		return text;
+	}
+}

@@ -1,0 +1,22 @@
+package mylib;
+
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.event.ActionEvent;
+import java.awt.event.MouseEvent;
+import java.util.ArrayList;
+
+
+
+
+public abstract class KAbstractButton extends KComponent{
+	protected KActionListener lis;
+//	protected Color btnColor = Color.black;
+	public KAbstractButton(String name){
+		this.text = name;
+	}
+//	public abstract void Click();
+	public abstract void draw(Graphics g);
+	public abstract void addActionListener(KActionListener lis);
+	public abstract void setBounds(int x, int y, int width, int height);
+}

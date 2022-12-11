@@ -1,0 +1,15 @@
+package mylib;
+
+import java.util.ArrayList;
+
+public class KMenu extends KContainer{
+	private ArrayList<KMenu> km = new ArrayList<>();
+	private int width = 70;
+	public KMenu(String text) {
+		super(text);
+		this.height = 20;
+	}
+	public void add(KComponent kc) {
+		
+	}
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;Homework_60212192_6040.java&apos; to &apos;CardApp.java&apos;&#x0D;&#x0A;- Original project: &apos;60212192_6040_java&apos;&#x0D;&#x0A;- Original element: &apos;Homework_60212192_6040.java&apos;&#x0D;&#x0A;- Renamed element: &apos;CardApp.java&apos;" description="Rename compilation unit &apos;Homework_60212192_6040.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src&lt;{Homework_60212192_6040.java" name="CardApp.java" references="false" stamp="1648010590729" version="1.0"/>
+</session>

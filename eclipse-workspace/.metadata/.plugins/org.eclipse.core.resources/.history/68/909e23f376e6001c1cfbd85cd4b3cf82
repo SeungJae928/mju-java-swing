@@ -1,0 +1,23 @@
+package mylib;
+
+import java.awt.Graphics;
+import java.util.ArrayList;
+
+public class KMenuBar extends KContainer{
+	private ArrayList<KMenu> kms = new ArrayList<>();
+	int width = 50;
+	public KMenuBar() {
+		super();
+		this.height = 20;
+	}
+	public void add(KMenu km) {
+		km.setX(width);
+		km.setHeight(height);
+		kms.add(km);
+		width = width + km.getWidth();
+	}
+	
+	public void draw(Graphics g) {
+		g.drawRect(0, 0, width, height);
+	}
+}

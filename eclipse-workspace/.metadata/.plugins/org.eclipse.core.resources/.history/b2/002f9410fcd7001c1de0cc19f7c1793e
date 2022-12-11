@@ -1,0 +1,63 @@
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JToolBar;
+
+class MyFrame extends JFrame {
+	public MyFrame() {
+		JToolBar tool = new JToolBar();
+		ArrayList<JButton> buttons = new ArrayList<>();
+		tool.setBackground(Color.gray);
+		buttons.add(new JButton("사각형"));
+		buttons.add(new JButton("타원"));
+		buttons.add(new JButton("선분"));
+		buttons.add(new JButton("복합도형"));
+		buttons.add(new JButton("빨강"));
+		buttons.add(new JButton("파랑"));
+		buttons.add(new JButton("초록"));
+		
+		ActionListener setFigurelis = new ActionListener() {
+			@Override public void actionPerformed(ActionEvent e) {
+				if(e.getSource() == "사각형") {
+					System.out.println("11");
+				} else if(e.getSource() == "타원") {
+					System.out.println("22");
+				} else if(e.getSource() == "선분") {
+					System.out.println("33");
+				} else if(e.getSource() == "복합도형") {
+					System.out.println("44");
+				}
+			}
+		};
+		
+		for(JButton button : buttons) {
+			tool.add(button);
+			button.addActionListener(setFigurelis);
+		}
+		
+		this.add(tool, BorderLayout.NORTH);
+		
+		
+	}
+	
+}
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+        JFrame f = new MyFrame();
+		
+		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		f.setSize(700,400);
+		
+		f.setVisible(true);
+	}
+
+}

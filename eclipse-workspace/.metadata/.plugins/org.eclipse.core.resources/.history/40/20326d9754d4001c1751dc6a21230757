@@ -1,0 +1,23 @@
+import java.awt.Graphics;
+import java.awt.Point;
+
+public class MyButton {
+	int type, x, y, width, height;
+	Figure f;
+    public MyButton(String s) {
+		
+		
+	}
+	public void setBounds(int x, int y, int width, int height) {
+		this.x = x;
+		this.y = y;
+		this.width = width;
+		this.height = height;
+	}
+	public boolean contains(Point p) {
+		return ;
+	}
+	public void draw(Graphics g) {
+		g.drawRect(x, y, width, height);
+	}
+}
